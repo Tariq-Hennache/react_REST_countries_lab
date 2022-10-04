@@ -1,11 +1,15 @@
 import CountryListItem from "./CountryListItem";
 
-const CountriesList = () => {
+const CountriesList = ({allCountriesNames, onClick}) => {
     return(
         <>
             <h2>CountriesList here!</h2>
-            <CountryListItem/>
-            <CountryListItem/>
+            <ul>
+                {allCountriesNames.map((countryName) => {
+                    return(<CountryListItem countryName={countryName} onClick={onClick}/>)
+                })}
+            </ul>
+            
         </>
     );
 }
